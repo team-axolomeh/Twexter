@@ -2,10 +2,12 @@
 const path = require('path');
 const fs = require('fs');
 const express = require('express');
+
 const cookieParser = require('cookie-parser');
+const db = require('./models/twexterModel.js');
+const authRouter = require('./routers/authRouter.js');
 
 const PORT = 3000;
-
 // Instantiate app
 const app = express();
 
@@ -14,6 +16,7 @@ app.use(express.json());
 // Parse cookies of incoming requests
 app.use(cookieParser());
 
+app.use('/auth', authRouter);
 // Handle unsupported routes
 app.use('*', (req, res) => {
   return res.status(404).json({ result: 'Not found' });
