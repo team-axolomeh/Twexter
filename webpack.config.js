@@ -5,7 +5,7 @@ module.exports = {
   // JS that gets run in index.html
   entry: './index.js',
   // Either 'development' or 'production'
-  mode: "development",
+  mode: 'development',
   // When npm run build is executed...
   output: {
     // Output goes here
@@ -16,17 +16,19 @@ module.exports = {
   // Development server settings
   devServer: {
     // Serves front end on port 3000
-    port: '3000',
+    port: '8080',
     // Serves everything in the client folder
+    host: 'localhost',
     static: {
       directory: path.join(__dirname, 'client'),
+      publicPath: '/',
     },
     // Automatically opens the browser after starting the server
     open: true,
     // Fetch requests in the front end are directed to this URL
     proxy: {
-      '/': 'http://localhost:8080',
-    }
+      '/api': 'http://localhost:3000',
+    },
   },
   // Everything seems to work when this is commented out. Do I really need this?
   resolve: {
@@ -39,11 +41,19 @@ module.exports = {
         // File names
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader',
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ['@babel/preset-env', { targets: 'defaults' }],
+              ['@babel/preset-react', { targets: 'defaults' }],
+            ],
+          },
+        },
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
@@ -55,7 +65,8 @@ module.exports = {
       // <script defer src="index_bundle.js"></script>
       // into <head></head>
       // I think this index_bundle.js file is not created, but read from RAM during development
-      template: path.join(__dirname, 'client', 'index.html'),
+      template: path.join(__dirname, 'client', './index.html'),
+      filename: './index.html'
     }),
   ],
 };
