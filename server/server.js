@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const express = require('express');
 const cookieParser = require('cookie-parser');
+const db = require('./models/twexterModel.js');
 
 const PORT = 3000;
 
