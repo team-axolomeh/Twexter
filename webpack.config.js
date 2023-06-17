@@ -20,7 +20,7 @@ module.exports = {
     // Serves everything in the client folder
     host: 'localhost',
     static: {
-      directory: path.join(__dirname, 'client'),
+      directory: path.join(__dirname, './dist'),
       publicPath: '/',
     },
     // Automatically opens the browser after starting the server
@@ -29,6 +29,7 @@ module.exports = {
     proxy: {
       '/': 'http://localhost:3000',
     },
+    historyApiFallback: true,
   },
   // Everything seems to work when this is commented out. Do I really need this?
   resolve: {
