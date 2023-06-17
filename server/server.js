@@ -6,6 +6,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const db = require('./models/twexterModel.js');
 const authRouter = require('./routers/authRouter.js');
+const twextRouter = require('./routers/twextRouter.js');
 
 const PORT = 3000;
 // Instantiate app
@@ -22,6 +23,7 @@ return res.sendStatus(200);
 });
 
 app.use('/auth', authRouter);
+app.use('/twext', twextRouter);
 // Handle unsupported routes
 app.get('/*', (req, res) => {
   return res.sendFile(path.join(__dirname, '../dist/index.html'), function(err) {
