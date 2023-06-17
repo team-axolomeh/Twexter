@@ -8,7 +8,7 @@ router.get('/', twextController.getTwexta, (req, res) => {
 });
 
 router.post(
-  '/post',
+  '/',
   userController.findUser,
   twextController.storeTwext,
   (req, res) => {
