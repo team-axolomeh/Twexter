@@ -7,6 +7,14 @@ function Twext(props) {
       <h3>{props.author} - {props.date}
       </h3>
       <p>{props.text}</p>
+      <div id="twext-footer"> 
+        <div id="flex-button">
+        </div>
+        <div id="retwext-button">
+        </div>
+        <div id="comment-button">
+        </div>
+      </div>
     </div>
   )
 }

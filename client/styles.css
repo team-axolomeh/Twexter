@@ -30,8 +30,8 @@ header {
     rgba(255, 166, 0, 0) 150px
   );
   background-color: var(--main-color);
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 body {
@@ -45,14 +45,19 @@ h2 {
 h1 {
   text-align: center;
 }
+
+h3 {
+  font-size: 22px;
+}
 #feed {
   width: 60%;
   margin: 0 auto;
   border: solid 0.5px rgba(255, 161, 45, 0.4);
-  box-shadow: 0px 5px 10px 1px rgba(255, 166, 0, 0.8);
+  box-shadow: 0px 5px 5px 1px rgba(255, 166, 0, 0.8);
 }
 
 #twext {
+  padding-top: 3rem;
   padding-bottom: 1rem;
   padding-left: 3rem;
   padding-right: 3rem;
@@ -64,8 +69,33 @@ h1 {
 }
 
 #twext p {
-  line-height: 1.5rem;
+  line-height: 2rem;
 }
+
+#twext-footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+#flex-button {
+  width: 2rem;
+  height: 2rem;
+  background-image: url('./flex.png');
+  background-color: #cccccc;
+}
+
+#retwext-button {
+  width: 2rem;
+  height: 2rem;
+  background-color: red;
+}
+
+#comment-button {
+  width: 2rem;
+  height: 2rem;
+  background-color: green;
+}
+
 
 footer {
   text-align: right;
