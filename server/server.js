@@ -16,10 +16,20 @@ app.use(express.json());
 // Parse cookies of incoming requests
 app.use(cookieParser());
 
+app.use(express.static('../client'));
+app.get('/', (req, res) => {
+return res.sendStatus(200);
+});
+
 app.use('/auth', authRouter);
 // Handle unsupported routes
-app.use('*', (req, res) => {
-  return res.status(404).json({ result: 'Not found' });
+app.get('/*', (req, res) => {
+  return res.sendFile(path.join(__dirname, '../dist/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
+  // return res.status(404).json({ result: 'Not found' });
 });
 
 // Global error handler

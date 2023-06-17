@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import data from '../twextMockData';
-import Twext from './Twext';
+import data from '../../twextMockData';
+import Twext from './../Twext';
 import { v4 as uuidv4 } from 'uuid';
 
 function Feed() {
