@@ -45,8 +45,8 @@ router.get('/callback', async ({ query: { code } }, res, next) => {
 
     const githubUser = await fromGithub.json();
     console.log('Found user: ' + githubUser.login);
-
-    return res.status(200).json({ user: githubUser.login });
+    console.log(githubUser);
+    return res.redirect('/?user=' + githubUser.login);
   } catch (e) {
     return next({
       log: 'Failed to retrieve username from Github',
