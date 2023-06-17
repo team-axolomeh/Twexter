@@ -11,11 +11,13 @@ const pool = new Pool({
 });
 
 // Export a function that logs the query before executing
-module.exports = (text, params, callback) => {
-  console.log(`Executed query\n${text}`);
-  if (params) {
-    console.log(`with params: ${params}`);
-  }
-  // pool.query is async (i.e. returns a promise)
-  return pool.query(text, params, callback);
+module.exports = {
+  query: (text, params, callback) => {
+    console.log(`Executed query\n${text}`);
+    if (params) {
+      console.log(`with params: ${params}`);
+    }
+    // pool.query is async (i.e. returns a promise)
+    return pool.query(text, params, callback);
+  },
 };

@@ -6,6 +6,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const db = require('./models/twexterModel.js');
 const authRouter = require('./routers/authRouter.js');
+const twextRouter = require('./routers/twextRouter.js');
 
 const PORT = 3000;
 // Instantiate app
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use('/auth', authRouter);
+app.use('/twext', twextRouter);
 // Handle unsupported routes
 app.use('*', (req, res) => {
   return res.status(404).json({ result: 'Not found' });
