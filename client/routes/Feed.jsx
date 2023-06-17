@@ -11,20 +11,23 @@ function Feed() {
   useEffect(() => {
     async function getTwexts() {
       //TODO: Switch to backend data
-
       
-      const response = data;
+      //Lorem ipsum
+      //const response = data;
+      const response = await fetch('/twext');
+      console.log(response)
+      const json = await response.json();
+      console.log(json)
 
 
 
       setTwextList(
-        response.map((twext) => {
+        json.result.map((twext) => {
           return (
             <Twext
               key={uuidv4()}
-              text={twext.text}
-              date={twext.date.toGMTString()}
-              author={twext.author}
+              text={twext.content}
+              author={twext.username}
             />
           );
         })
