@@ -1,9 +1,9 @@
 // Import pool
 const { Pool } = require('pg');
+require(dotenv).config();
 
 // postgres elephant sql connection url
-PG_URI =
-  'postgres://jzfaobvj:RXtHa6nLUWgZ_WcttXHgEw8lOmW1fiU9@rajje.db.elephantsql.com/jzfaobvj';
+PG_URI = process.env.PG_URI;
 
 // Establish connection via pool
 const pool = new Pool({
