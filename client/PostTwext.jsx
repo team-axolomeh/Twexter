@@ -45,12 +45,12 @@ function PostTwext(props) {
     }
     setErrorMessage("");
     const username = searchParams.get('user');
-    if (!username) return;
+    //if (!username) return;
     const body = {
       username: username,
       twextContent: twextContent,
     };
-    const response = await fetch('/twext/post', {
+    const response = await fetch('/twext', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -58,7 +58,9 @@ function PostTwext(props) {
       },
       body: JSON.stringify(body),
     });
-    console.log('response', response);
+    const json = await response.json();
+    console.log(json);
+    console.log('response FROM POST REQUEST', response);
   }
 
   return (
