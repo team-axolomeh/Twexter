@@ -7,32 +7,52 @@ dotenv.config();
 
 router.get('/', (req, res) => {
   console.log('~~~~~~~~Trying to redirect~~~~~~~~');
-  return res
-    .status(200)
-    .json({
-      link: `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}`,
-    });
+  return res.redirect(
+    `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}`
+  );
 });
 
-router.get('/callback', ({ query: { code } }, res) => {
-  fetch('https://github.com/login/oauth/access_token', {
-    method: 'POST',
-    body: {
-      client_id: process.env.GITHUB_CLIENT_ID,
-      client_secret: process.env.GITHUB_SECRET,
-      code,
-    },
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((_res) => _res.data.access_token)
-    .then((token) => {
-      // eslint-disable-next-line no-console
-      console.log('My token:', token);
+router.get('/callback', async ({ query: { code } }, res, next) => {
+  // Get the token
+  // With the token, get the username
+  console.log('~~~~~~~~Doing auth callback~~~~~~~~');
+  // console.log(code);
 
-      res.redirect(`/?token=${token}`);
-    })
-    .catch((err) => res.status(500).json({ err: err.message }));
+  try {
+    let fromGithub = await fetch(
+      'https://github.com/login/oauth/access_token',
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          client_id: process.env.GITHUB_CLIENT_ID,
+          client_secret: process.env.GITHUB_SECRET,
+          code,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+
+    const token = await fromGithub.text();
+
+    fromGithub = await fetch('https://api.github.com/user', {
+      type: 'POST',
+      headers: {
+        Authorization: 'Bearer ' + token.split('&')[0].split('=')[1],
+      },
+    });
+
+    const githubUser = await fromGithub.json();
+    console.log('Found user: ' + githubUser.login);
+    console.log(githubUser);
+    return res.redirect('/?user=' + githubUser.login);
+  } catch (e) {
+    return next({
+      log: 'Failed to retrieve username from Github',
+      status: 500,
+      message: { err: 'Could not get username' },
+    });
+  }
 });
 module.exports = router;
