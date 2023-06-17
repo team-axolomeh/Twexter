@@ -27,7 +27,7 @@ module.exports = {
     open: true,
     // Fetch requests in the front end are directed to this URL
     proxy: {
-      '/api': 'http://localhost:3000',
+      '/': 'http://localhost:3000',
     },
   },
   // Everything seems to work when this is commented out. Do I really need this?
@@ -66,7 +66,7 @@ module.exports = {
       // into <head></head>
       // I think this index_bundle.js file is not created, but read from RAM during development
       template: path.join(__dirname, 'client', './index.html'),
-      filename: './index.html'
+      filename: './index.html',
     }),
   ],
 };
