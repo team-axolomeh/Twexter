@@ -33,7 +33,7 @@ userController.findOrCreateUser = async (req, res, next) => {
     }
   } catch (err) {
     return next({
-      log: 'Error: failure in userController.findUser -- ' + e,
+      log: 'Error: failure in userController.findUser -- ' + err,
       status: 400,
       message: { err: 'Failed to find user' },
     });
