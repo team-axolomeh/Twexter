@@ -65,7 +65,7 @@ h3 {
   overflow: scroll;
   overflow-x: hidden;
   scrollbar-color: var(--main-color);
-  border-bottom: solid 0.5px rgba(255, 161, 45, 0.8);
+  border: solid 0.5px rgba(255, 161, 45, 0.8);
 }
 
 #twext p {
@@ -96,7 +96,6 @@ h3 {
   background-color: green;
 }
 
-
 footer {
   text-align: right;
   padding: 1rem;
@@ -106,11 +105,57 @@ a:visited {
   color: rgb(255, 221, 0);
 }
 
-#logo img{
+#logo img {
   width: 5rem;
   height: 5rem;
   margin-left: 6rem;
   margin-right: 6rem;
+}
+
+#post-twext {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#post-twext button {
+  width: 6rem;
+  height: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--main-color);
+  border-radius: 6px;
+  border: none;
+
+}
+
+#post-twext button:hover {
+  filter: brightness(80%);
+  cursor: pointer;
+}
+
+#post-twext button:active {
+  filter: brightness(60%);
+  cursor: pointer;
+}
+
+#twext-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#post-twext textarea {
+  height: 20rem;
+  width: 100%;
+}
+
+#post-button-container {
+}
+
+#error-message {
+  text-align: center;
+  color:rgb(217, 0, 0);
+  font-weight: 800;
 }
 
 /* width */
