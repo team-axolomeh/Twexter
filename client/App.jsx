@@ -18,9 +18,18 @@ function App() {
   return (
     <div className="App">
       <header>
+      <div id="logo">
+        <img src="./logo.png" />
+      </div>
       <h1>Welcome to Twexter!</h1>
+      <div id="logo">
+        <img src="./logo.png" />
+      </div>
       </header>
       <Feed />
+      <footer>
+        Created by <a href="https://github.com/axolomehsterz">the axolomehsterz</a> 💪
+      </footer>
     </div>
   )
 }
