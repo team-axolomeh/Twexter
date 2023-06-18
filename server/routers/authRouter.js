@@ -20,9 +20,7 @@ router.get(
   authController.getGithubUsername,
   userController.findOrCreateUser,
   (req, res) => {
-    return res.redirect(
-      '/feed?user=' + encodeURIComponent(res.locals.user.login)
-    );
+    return res.redirect('/feed?user=' + res.locals.username);
   }
 );
 module.exports = router;
