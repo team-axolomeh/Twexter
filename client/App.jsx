@@ -3,8 +3,17 @@ import Feed from './routes/Feed.jsx';
 import Login from './routes/Login.jsx';
 import ErrorPage from './routes/ErrorPage.jsx';
 import './styles.css';
-import { Link, Route, Routes, useNavigate, useSearchParams } from 'react-router-dom';
-import Logo from "./logo.png";
+import {
+  Link,
+  Route,
+  Routes,
+  useNavigate,
+  useSearchParams,
+} from 'react-router-dom';
+import Logo from './logo.png';
+
+import Footer from './Footer.jsx';
+
 function App() {
   const [text, setText] = useState();
   const [user, setUser] = useState();
@@ -14,7 +23,7 @@ function App() {
     async function getData() {
       const result = await fetch('/api');
       const text = await result.text();
-      setUser(searchParams.get("user"));
+      setUser(searchParams.get('user'));
     }
     getData();
   }, []);
@@ -24,24 +33,25 @@ function App() {
     <div className="App">
       <header>
         <div id="logo">
-          <img src={Logo}/>
+          <img src={Logo} />
         </div>
-        <h1>Welcome to Twexter!</h1>
-        
+        <h1 className="font-semibold text-4xl">Welcome to Twexter!</h1>
+
         <div id="logo">
           <img src={Logo} />
         </div>
       </header>
-      {user ? <h2>Welcome, {user}!</h2> : null }
+      {user ? <h2>Welcome, {user}!</h2> : null}
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/feed" element={<Feed />} />
         <Route path="/error" element={<ErrorPage />} />
       </Routes>
-      <footer>
+      <Footer className=""></Footer>
+      {/* <footer>
         Created by{' '}
         <a href="https://github.com/axolomehsterz">the axolomehsterz</a> 💪
-      </footer>
+      </footer> */}
       {/* <Link to="/error">Click me</Link> */}
     </div>
   );
