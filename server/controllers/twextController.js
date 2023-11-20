@@ -1,8 +1,13 @@
 const db = require('../models/twexterModel.js');
+const { makeMWareBanner } = require('../utils.js');
+
+const mwareBanner = makeMWareBanner('twextController');
 
 const twextController = {};
 
 twextController.getUsersTwexta = async (req, res, next) => {
+  mwareBanner('getUsersTwexta');
+
   const QUERY = `SELECT u.*, t.content FROM users u JOIN twexta t ON t.user_id=u._id WHERE u.username=$1;`;
   const twexta = await db.query(QUERY, [res.locals.user._id]);
   res.locals.twexta = twexta.rows[0];
@@ -10,6 +15,7 @@ twextController.getUsersTwexta = async (req, res, next) => {
 };
 
 twextController.getTwexta = async (req, res, next) => {
+  mwareBanner('getTwexta');
   const QUERY = `SELECT u.*, t.content FROM users u JOIN twexta t ON t.user_id=u._id;`;
   const twexta = await db.query(QUERY);
   res.locals.twexta = twexta.rows;
@@ -17,6 +23,7 @@ twextController.getTwexta = async (req, res, next) => {
 };
 
 twextController.storeTwext = async (req, res, next) => {
+  mwareBanner('storeTwext');
   // 1.0 Expect the user to come from the body
   // 2.0 Look up the user
 
