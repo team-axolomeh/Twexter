@@ -1,18 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import Feed from './routes/Feed.jsx';
-import Login from './routes/Login.jsx';
-import ErrorPage from './routes/ErrorPage.jsx';
-import './styles.css';
-import {
-  Link,
-  Route,
-  Routes,
-  useNavigate,
-  useSearchParams,
-} from 'react-router-dom';
-import Footer from './Footer.jsx';
+import React, { useEffect, useState } from "react";
+import Feed from "./routes/Feed.jsx";
+import Login from "./routes/Login.jsx";
+import ErrorPage from "./routes/ErrorPage.jsx";
+import "./styles.css";
+import { Route, Routes, useSearchParams } from "react-router-dom";
+import Footer from "./Footer.jsx";
 
-import Logo from './images/logo.png';
+import Logo from "./images/logo.png";
+import Register from "./routes/Register.jsx";
 function App() {
   const [text, setText] = useState();
   const [user, setUser] = useState();
@@ -20,9 +15,9 @@ function App() {
 
   useEffect(() => {
     async function getData() {
-      const result = await fetch('/api');
+      const result = await fetch("/api");
       const text = await result.text();
-      setUser(searchParams.get('user'));
+      setUser(searchParams.get("user"));
     }
     getData();
   }, []);
@@ -42,6 +37,7 @@ function App() {
       {user ? <h2>Welcome, {user}!</h2> : null}
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/feed" element={<Feed />} />
         <Route path="/error" element={<ErrorPage />} />
       </Routes>

@@ -1,29 +1,29 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 @layer base {
   @font-face {
     font-family: Roboto;
     font-weight: 400;
-    src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    src: url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
   }
 }
 
 body {
   --main-color: rgb(255, 161, 45);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -52,7 +52,7 @@ body {
 
 h2 {
   text-align: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 h1 {
   text-align: center;
@@ -92,7 +92,7 @@ h3 {
 #flex-button {
   width: 2rem;
   height: 2rem;
-  background-image: url('./images/flex.png');
+  background-image: url("./images/flex.png");
   background-color: #cccccc;
 }
 
