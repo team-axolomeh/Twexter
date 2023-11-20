@@ -1,7 +1,9 @@
 function randomDate() {
   const start = new Date(2012, 0, 1);
   const end = new Date();
-  return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+  return new Date(
+    start.getTime() + Math.random() * (end.getTime() - start.getTime()),
+  );
 }
 
 module.exports = [
@@ -17,8 +19,8 @@ Consectetur dolor mollit pariatur anim. Officia cillum minim ut ullamco magna ma
 Excepteur enim mollit culpa anim est voluptate. Nostrud sit ex commodo Lorem excepteur tempor aute ullamco fugiat enim ullamco cupidatat ea mollit. Qui adipisicing incididunt culpa ex duis ut est Lorem incididunt id irure Lorem culpa voluptate.
 Consequat qui veniam proident elit esse elit est. Veniam laborum exercitation cupidatat duis occaecat sunt in. Consectetur tempor exercitation qui anim ad ex deserunt consectetur proident. Reprehenderit veniam in exercitation excepteur consequat ipsum id consectetur est culpa duis laborum aliqua. Nostrud voluptate anim eu deserunt ullamco id eu aute exercitation adipisicing culpa occaecat anim. Excepteur ut minim laboris duis non non voluptate dolore deserunt. Qui aute nulla Lorem qui exercitation qui tempor.
 Eiusmod incididunt aute dolore dolore eiusmod fugiat. Incididunt tempor do exercitation incididunt tempor eiusmod commodo commodo consectetur exercitation. Eu voluptate minim cupidatat et excepteur id qui dolore cillum do aute anim. Dolor sunt et in ex non eu deserunt`,
-    date: randomDate()
-},
+    date: randomDate(),
+  },
   {
     author: "Alex Vranas",
     text: `Nostrud aliqua labore quis eiusmod sit exercitation in occaecat deserunt fugiat dolor fugiat commodo aliquip. Nostrud esse ad veniam Lorem nisi ullamco pariatur minim occaecat incididunt. Mollit commodo sit id reprehenderit. Irure eiusmod cillum nisi cupidatat aliquip. Ullamco magna incididunt veniam consectetur veniam elit. Ad fugiat laboris adipisicing commodo ea. Adipisicing id dolor ut culpa Lorem pariatur amet quis et do officia adipisicing aute.
@@ -31,8 +33,9 @@ Cillum ad reprehenderit ea irure ex incididunt ex dolor dolore velit labore veni
 Sit quis reprehenderit sit eiusmod aute ut velit deserunt. Quis eu consequat fugiat nulla ea et qui nostrud ipsum sit minim eiusmod ullamco. Consequat et pariatur labore tempor velit amet ad. Cillum elit ea irure amet aute fugiat adipisicing ipsum dolore culpa proident nisi est labore. Fugiat aliqua qui fugiat sint amet laborum ad dolore eiusmod. Nulla mollit eu pariatur nostrud ut voluptate ex commodo quis proident. Tempor velit ut nulla deserunt ut mollit aliqua amet esse pariatur nostrud consequat deserunt non.
 Eiusmod dolor magna commodo ut Lorem culpa ea incididunt sint aute qui in. In officia laborum commodo eu culpa velit. Ullamco ipsum aliqua dolore commodo mollit qui deserunt labore. Non veniam deserunt adipisicing commodo ipsum officia enim. Occaecat duis sit aute esse sint anim eu ipsum excepteur laboris eu tempor.
 Ipsum nulla veniam dolore eu occaecat excepteur qui adipisicing mollit nulla adipisicing fugiat aliquip officia. Proident incididunt ullamco ea minim exercitation ad proident nostrud irure magna sint ea labore. Velit ullamco culpa qui eiusmod do excepteur. Dolore tempor cupidatat velit labore cupidatat officia adipisicing.`,
-date: randomDate()
-  }, {
+    date: randomDate(),
+  },
+  {
     author: "Mitch Gruen",
     text: `Aute duis ipsum dolor magna Lorem pariatur. Incididunt do ullamco fugiat nulla ea sunt dolore aliqua non. Cillum laboris dolore id aliqua deserunt laboris cupidatat esse incididunt veniam. Incididunt ea laborum nulla officia incididunt ex. Cupidatat minim et duis adipisicing mollit magna veniam veniam incididunt anim incididunt.
 Incididunt eiusmod sit velit aute ea pariatur cillum commodo proident velit culpa tempor sit excepteur. Adipisicing dolor voluptate aute aliqua eu officia. Aliquip voluptate nisi et aliqua culpa elit. Cupidatat ullamco aute cupidatat aute in reprehenderit do anim dolor reprehenderit. Magna nostrud do voluptate elit labore proident sunt esse mollit et elit laboris. Voluptate sint culpa sint sint aliqua laboris eu commodo do. Duis incididunt in in irure eiusmod occaecat commodo.
@@ -44,10 +47,10 @@ Et laborum amet aute id ut labore laborum ad. Quis adipisicing laborum labore an
 Aute magna esse magna ipsum consequat nostrud est consequat adipisicing tempor. Tempor deserunt consectetur do nostrud sunt ullamco consectetur do enim cupidatat adipisicing. Culpa ullamco tempor cupidatat consectetur proident aute voluptate aliqua exercitation. Sint proident irure aliquip dolore excepteur exercitation enim enim esse laboris nostrud.
 Duis ea sunt laboris reprehenderit et cillum minim cupidatat nisi. Sunt id reprehenderit aliqua est nulla ea id irure duis eu nisi proident. Laborum aliqua duis officia aliquip cillum ex labore labore do qui excepteur duis ipsum nulla. Ex duis velit amet cupidatat eu culpa esse cillum. Enim officia minim dolor laborum non culpa aute veniam.
 Eiusmod dolore proident nulla cupidatat aliquip velit et veniam anim irure deserunt dolor. Est est do do elit labore sunt quis aliquip velit velit exercitation sunt labore laborum. Dolore ut ex mollit culpa ipsum est laborum adipisicing. Amet incididunt mollit proident velit anim pariatur culpa minim consequat ut dolore nisi. Ut dolor et est id ex dolor exercitation aliqua exercitation aute velit non ullamco commodo.`,
-date: randomDate()
+    date: randomDate(),
   },
   {
-    author: 'Ian MacDougald',
+    author: "Ian MacDougald",
     text: `Reprehenderit eu tempor velit reprehenderit. Duis elit quis eu laboris deserunt pariatur non. Laboris in ut Lorem non occaecat laborum aute aliqua ad cillum cillum ipsum dolor. Et dolore officia irure in mollit nisi magna enim magna pariatur reprehenderit sint.
 Enim velit sunt sint cillum quis esse pariatur fugiat Lorem eiusmod tempor aliqua est adipisicing. Amet Lorem nisi voluptate cillum aliquip. Ea id duis tempor ullamco deserunt excepteur proident non est mollit eiusmod. Est eiusmod aliquip aliquip elit eiusmod reprehenderit consectetur fugiat veniam sit velit quis duis labore. Irure eiusmod eu fugiat magna magna incididunt laboris aliqua. Consequat sint commodo aliquip aliquip cupidatat et eu pariatur. Cupidatat occaecat ex exercitation adipisicing aliquip dolore aute aute ut commodo incididunt enim.
 Aliqua reprehenderit aute dolor irure. Excepteur magna sit Lorem commodo magna. Qui ut laboris incididunt aute velit esse voluptate. Pariatur aliqua duis non ipsum. Duis quis dolor eu fugiat ipsum et. Fugiat esse sint aliqua adipisicing ad eiusmod velit cillum.
@@ -58,8 +61,9 @@ Incididunt veniam proident exercitation sunt labore labore excepteur laboris do 
 Commodo tempor mollit sint est proident voluptate duis tempor. Id tempor adipisicing ipsum ut officia pariatur incididunt cupidatat laboris cupiatat proident. Magna officia amet ullamco minim aliquip exercitation sint cupidatat mollit incididunt. Deserunt officia duis ea ullamco in pariatur. Et exercitation adipisicing aliqua ea ut esse mollit officia est tempor cillum qui.
 Officia eu consequat irure enim nostrud eiusmod. Non tempor occaecat cupidatat ad aute. Non exercitation consectetur in dolor ut ullamco in ipsum
 Nulla in culpa eiusmod esse tempor magna laboris enim dolor tempor cupidatat tempor. Et sint consectetur Lorem sit veniam eu. Qui culpa fugiat dolore culpa quis fugiat qui do fugiat duis elit adipisicing magna. Dolor proident anim eiusmod amet labore. Ea minim laborum enim deserunt tempor adipisicing aute. Excepteur anim id labore in id. Ad pariatur amet qui qui veniam elit est do.`,
-date: randomDate()
-  }, {
+    date: randomDate(),
+  },
+  {
     author: "Alwin Zhao",
     text: `Velit laborum dolore duis minim. Aute elit ex exercitation dolor enim cupidatat ipsum ipsum veniam non proident. Voluptate id sit aute qui fugiat incididunt elit aute do aute. Ut cillum tempor pariatur sunt amet amet culpa anim enim anim. Irure enim cupidatat amet ex consectetur aliquip elit consectetur sint voluptate sint cillum sit ipsum.
 Aliqua incididunt laboris aliquip commodo qui mollit quis consectetur tempor. Adipisicing non excepteur fugiat sit do nostrud irure non excepteur consequat anim. Enim eu in pariatur ad ipsum do culpa veniam laboris officia voluptate nostrud Lorem labore. Dolore laborum labore eiusmod incididunt aute occaecat aute. Qui minim cillum veniam ad sint.
@@ -71,7 +75,7 @@ Est cupidatat excepteur deserunt cupidatat labore. Id incididunt mollit eiusmod 
 Nostrud ex aliqua amet amet do quis mollit est do consectetur id cupidatat. Tempor magna ullamco duis culpa voluptate irure laborum voluptate. Magna cupidatat nulla elit id. Do deserunt eiusmod et deserunt laboris. Deserunt mollit ullamco ex officia aliqua ad mollit officia sit consequat laborum. Enim Lorem velit tempor id consequat labore consectetur consectetur aliquip laboris deserunt mollit eu nulla.
 Eu velit sit ut consequat. Culpa cillum dolor sunt excepteur. Ullamco voluptate est veniam eu ea ullamco.
 Duis eiusmod amet do excepteur laborum tempor cillum Lorem culpa. Ea quis dolor nulla ullamco aute consequat ad pariatur magna officia commodo minim excepteur qui. Pariatur duis sint deserunt cillum officia proident proident id excepteur ea. Esse culpa mollit commodo pariatur ex esse excepteur.`,
-date: randomDate()
+    date: randomDate(),
   },
   {
     author: "Sky",
@@ -85,8 +89,9 @@ Sit incididunt veniam irure occaecat id consectetur laborum qui culpa veniam est
 Ullamco dolor aliquip culpa do eiusmod nisi. Laborum sint ad officia sint. Laboris enim tempor enim labore adipisicing exercitation deserunt enim quis exercitation. Proident aute excepteur culpa pariatur proident excepteur veniam mollit ea voluptate commodo. Mollit aliqua ad nisi reprehenderit irure do reprehenderit esse et aliqua sint.
 Nisi culpa elit ex magna do veniam reprehenderit sunt dolor quis. Incididunt cupidatat commodo laborum nulla laboris deserunt non do do do commodo adipisicing. Irure sint excepteur nulla dolore proident duis sunt nisi ex in eu sunt. Sint voluptate eiusmod veniam tempor ad est commodo excepteur reprehenderit laboris velit elit quis ut. Consectetur esse esse ullamco et reprehenderit proident.
 Veniam esse ea anim cupidatat. Labore fugiat quis sit esse quis do. Sunt mollit ex in proident. Est occaecat sit deserunt minim commodo ad. Labore qui ipsum pariatur est dolor Lorem sint ad nulla exercitation cupidatat anim aliqua adipisicing. Fugiat do minim incididunt enim ullamco irure velit ex tempor sit. Consectetur qui culpa labore fugiat id Lorem eiusmod ea consequat voluptate anim id tempor labore.`,
-date: randomDate()
-  }, {
+    date: randomDate(),
+  },
+  {
     author: "Elon Musk",
     text: `Non cillum nulla excepteur reprehenderit culpa ipsum aliquip magna non non deserunt enim et. Aliqua ex laboris esse magna dolore minim amet est sint fugiat labore aliquip. Ut et voluptate laborum tempor voluptate proident enim. Esse incididunt enim quis veniam reprehenderit nostrud sint id.
 Ullamco in dolor dolor aliquip do labore ad amet enim excepteur irure. Ullamco tempor Lorem aliqua nulla. In culpa ullamco veniam deserunt ea. Laboris cillum enim do mollit veniam non.
@@ -98,8 +103,9 @@ Tempor labore ex cupidatat Lorem nisi Lorem officia ea pariatur excepteur ut mol
 Qui reprehenderit qui commodo sunt exercitation amet ad adipisicing cillum adipisicing sunt aute. Aute deserunt culpa irure elit qui excepteur minim excepteur veniam. Lorem consectetur sint do officia voluptate esse esse deserunt ullamco qui ipsum fugiat ipsum. Cupidatat sint pariatur reprehenderit mollit sint eiusmod minim quis. Et qui voluptate adipisicing labore ut.
 Ex sunt occaecat voluptate aliquip. Excepteur quis esse voluptate mollit commodo ipsum velit aliqua dolor tempor deserunt. Officia quis enim laboris et irure reprehenderit commodo qui exercitation laborum. Cupidatat in dolore aliqua excepteur nostrud aute amet ut labore.
 Lorem consectetur minim enim fugiat anim cillum Lorem non. Dolor fugiat magna proident aute sunt aliquip et cillum dolor ipsum irure. Cillum reprehenderit sunt ut eu. Proident cupidatat ex laboris magna ex est adipisicing magna elit excepteur esse dolore. Cupidatat Lorem elit eiusmod fugiat. Fugiat duis sunt minim sunt. Mollit dolor incididunt sint esse nisi eu.`,
-date: randomDate()
-  }, {
+    date: randomDate(),
+  },
+  {
     author: "Elon Musk",
     text: `Do anim elit dolore eu fugiat eu pariatur nulla sit ullamco exercitation aliquip. Sit eiusmod aliquip officia cillum ad commodo. Anim aliquip tempor excepteur laborum est reprehenderit enim sunt eu officia enim qui ad.
 Exercitation fugiat amet eu sit irure. Magna aliquip anim in minim deserunt do eiusmod enim cillum et. Do ad adipisicing anim Lorem commodo cillum aliquip duis. Labore labore sunt exercitation voluptate eiusmod velit est est duis elit ea ad. Adipisicing quis in aliqua Lorem laboris veniam ullamco nisi ipsum elit exercitation officia voluptate.
@@ -111,6 +117,6 @@ Et mollit magna pariatur nostrud occaecat culpa occaecat. Excepteur qui nostrud 
 Culpa elit dolor non voluptate nostrud veniam. Reprehenderit eu minim nulla ex qui id proident. Sunt exercitation officia labore irure ea et anim aliquip consequat esse magna. Aute velit elit eiusmod dolor reprehenderit in laboris enim nulla incididunt reprehenderit anim. Dolor velit eiusmod minim ullamco proident ea occaecat ea exercitation eiusmod quis. Tempor labore et nulla consequat proident.
 Aliquip nostrud et et aliquip exercitation non commodo excepteur Lorem enim. Ullamco veniam magna in commodo. Dolore et enim aute id reprehenderit aute cillum nisi occaecat do sunt sit. Esse velit reprehenderit adipisicing ad adipisicing aute aliqua irure fugiat dolor anim et eu. Non nisi deserunt aliqua nulla reprehenderit reprehenderit occaecat nisi.
 Magna fugiat do ullamco cupidatat commodo quis velit irure et ad duis culpa. Fugiat fugiat aliquip esse velit enim consequat aliqua consectetur. Ipsum eu consequat commodo ipsum tempor. Qui non anim mollit occaecat velit.`,
-date: randomDate()
-  }
+    date: randomDate(),
+  },
 ];

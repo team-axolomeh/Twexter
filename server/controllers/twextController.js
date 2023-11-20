@@ -1,12 +1,12 @@
-const db = require('../models/twexterModel.js');
-const { makeMWareBanner } = require('../utils.js');
+const db = require("../models/twexterModel.js");
+const { makeMWareBanner } = require("../utils.js");
 
-const mwareBanner = makeMWareBanner('twextController');
+const mwareBanner = makeMWareBanner("twextController");
 
 const twextController = {};
 
 twextController.getUsersTwexta = async (req, res, next) => {
-  mwareBanner('getUsersTwexta');
+  mwareBanner("getUsersTwexta");
 
   const QUERY = `SELECT u.*, t.content FROM users u JOIN twexta t ON t.user_id=u._id WHERE u.username=$1;`;
   const twexta = await db.query(QUERY, [res.locals.user._id]);
@@ -15,7 +15,7 @@ twextController.getUsersTwexta = async (req, res, next) => {
 };
 
 twextController.getTwexta = async (req, res, next) => {
-  mwareBanner('getTwexta');
+  mwareBanner("getTwexta");
   const QUERY = `SELECT u.*, t.content FROM users u JOIN twexta t ON t.user_id=u._id;`;
   const twexta = await db.query(QUERY);
   res.locals.twexta = twexta.rows;
@@ -23,7 +23,7 @@ twextController.getTwexta = async (req, res, next) => {
 };
 
 twextController.storeTwext = async (req, res, next) => {
-  mwareBanner('storeTwext');
+  mwareBanner("storeTwext");
   // 1.0 Expect the user to come from the body
   // 2.0 Look up the user
 
@@ -34,12 +34,12 @@ twextController.storeTwext = async (req, res, next) => {
       res.locals.user._id,
     ]); //CONTENT STORED IN twextContent
     //user
-    if (newTwext) res.locals.twextPostResult = 'Stored the twext';
-    else res.locals.twextPostResult = 'DID NOT store the twext';
+    if (newTwext) res.locals.twextPostResult = "Stored the twext";
+    else res.locals.twextPostResult = "DID NOT store the twext";
 
     return next();
   } catch (err) {
-    return next({ err: 'could not store text' });
+    return next({ err: "could not store text" });
   }
 };
 

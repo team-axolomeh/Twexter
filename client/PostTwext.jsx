@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 function PostTwext(props) {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -9,7 +9,7 @@ function PostTwext(props) {
 
   const wordCounter = (string) => {
     if (!string) return 0;
-    const array = string.split(' ');
+    const array = string.split(" ");
     return array.length;
   };
 
@@ -19,7 +19,6 @@ function PostTwext(props) {
     setWordCount(result);
   };
   async function handleClick() {
-
     // const wordCount = (string) => {
     //   const array = string.split(' ');
     //   return array.length;
@@ -29,7 +28,7 @@ function PostTwext(props) {
 
     // } []);
 
-    const element = document.querySelector('#new-twext-content');
+    const element = document.querySelector("#new-twext-content");
     const twextContent = element.value;
     console.log(twextContent);
 
@@ -37,30 +36,30 @@ function PostTwext(props) {
     //Count number of words
     //If < 500 return
     const wordCount = wordCounter(twextContent);
-    console.log('wordCount', wordCount);
+    console.log("wordCount", wordCount);
     if (wordCount < 500) {
-      console.log('twext does not have enough words');
-      setErrorMessage('Twext must have a minimum of 500 words')
+      console.log("twext does not have enough words");
+      setErrorMessage("Twext must have a minimum of 500 words");
       return;
     }
     setErrorMessage("");
-    const username = searchParams.get('user');
+    const username = searchParams.get("user");
     //if (!username) return;
     const body = {
       username: username,
       twextContent: twextContent,
     };
-    const response = await fetch('/twext', {
-      method: 'POST',
+    const response = await fetch("/twext", {
+      method: "POST",
       headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
     });
     const json = await response.json();
     console.log(json);
-    console.log('response FROM POST REQUEST', response);
+    console.log("response FROM POST REQUEST", response);
   }
 
   return (

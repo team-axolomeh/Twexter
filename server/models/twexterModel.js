@@ -1,6 +1,6 @@
 // Import pool
-const { Pool } = require('pg');
-require('dotenv').config();
+const { Pool } = require("pg");
+require("dotenv").config();
 
 // postgres elephant sql connection url
 PG_URI = process.env.PG_URI;

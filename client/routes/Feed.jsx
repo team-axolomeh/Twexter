@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import data from '../../twextMockData';
-import Twext from './../Twext';
-import { v4 as uuidv4 } from 'uuid';
+import React, { useEffect, useState } from "react";
+import data from "../../twextMockData";
+import Twext from "./../Twext";
+import { v4 as uuidv4 } from "uuid";
 import PostTwext from "../PostTwext";
 
 function Feed() {
@@ -11,15 +11,13 @@ function Feed() {
   useEffect(() => {
     async function getTwexts() {
       //TODO: Switch to backend data
-      
+
       //Lorem ipsum
       //const response = data;
-      const response = await fetch('/twext');
-      console.log(response)
+      const response = await fetch("/twext");
+      console.log(response);
       const json = await response.json();
-      console.log(json)
-
-
+      console.log(json);
 
       setTwextList(
         json.result.map((twext) => {
@@ -30,7 +28,7 @@ function Feed() {
               author={twext.username}
             />
           );
-        })
+        }),
       );
     }
     getTwexts();
