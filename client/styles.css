@@ -1,0 +1,195 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+@layer base {
+  @font-face {
+    font-family: Roboto;
+    font-weight: 400;
+    src: url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+  }
+}
+
+body {
+  --main-color: rgb(255, 161, 45);
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.App {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(
+    rgba(255, 111, 0, 0.65) 0%,
+    rgba(255, 166, 0, 0) 150px
+  );
+  background-color: var(--main-color);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+body {
+  background-color: #19191c;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+h1 {
+  text-align: center;
+}
+
+h3 {
+  font-size: 22px;
+}
+#feed {
+  width: 60%;
+  margin: 0 auto;
+  /* border: solid 0.5px rgba(255, 161, 45, 0.4); */
+  /* box-shadow: 0px 5px 5px 1px rgba(255, 166, 0, 0.8); */
+}
+
+.twext {
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  height: 20rem;
+  overflow: scroll;
+  overflow-x: hidden;
+  scrollbar-color: var(--main-color);
+  border: solid 0.5px rgba(255, 161, 45, 0.8);
+}
+
+#twext p {
+  line-height: 2rem;
+}
+
+#twext-footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+#flex-button {
+  width: 2rem;
+  height: 2rem;
+  background-image: url("./images/flex.png");
+  background-color: #cccccc;
+}
+
+#retwext-button {
+  width: 2rem;
+  height: 2rem;
+  background-color: red;
+}
+
+#comment-button {
+  width: 2rem;
+  height: 2rem;
+  background-color: green;
+}
+
+footer {
+  text-align: right;
+  padding: 1rem;
+}
+
+a:visited {
+  color: rgb(255, 221, 0);
+}
+
+#logo img {
+  width: 5rem;
+  height: 5rem;
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
+
+#post-twext {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#post-twext button {
+  width: 6rem;
+  height: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--main-color);
+  border-radius: 6px;
+  border: none;
+}
+
+#post-twext button:hover {
+  filter: brightness(80%);
+  cursor: pointer;
+}
+
+#post-twext button:active {
+  filter: brightness(60%);
+  cursor: pointer;
+}
+
+#twext-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#post-twext textarea {
+  height: 20rem;
+  width: 100%;
+}
+
+#post-button-container {
+}
+
+#error-message {
+  text-align: center;
+  color: rgb(217, 0, 0);
+  font-weight: 800;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+@media only screen and (max-width: 770px) {
+}
+
+@media only screen and (max-width: 512px) {
+}
