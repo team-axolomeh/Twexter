@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -73,5 +74,13 @@ module.exports = {
       template: path.join(__dirname, 'client', './index.html'),
       filename: './index.html',
     }),
+
+    new CopyPlugin({
+      patterns: [{ from: path.join(__dirname, './client/images') }],
+    }),
+
+    // new CopyPlugin({
+    //   patterns: [{ from: path.join(__dirname, './client/images'), to: './' }],
+    // }),
   ],
 };

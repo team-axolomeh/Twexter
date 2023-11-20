@@ -80,7 +80,7 @@ h3 {
 #flex-button {
   width: 2rem;
   height: 2rem;
-  background-image: url('./flex.png');
+  background-image: url('./images/flex.png');
   background-color: #cccccc;
 }
 
@@ -125,7 +125,6 @@ a:visited {
   background-color: var(--main-color);
   border-radius: 6px;
   border: none;
-
 }
 
 #post-twext button:hover {
@@ -154,7 +153,7 @@ a:visited {
 
 #error-message {
   text-align: center;
-  color:rgb(217, 0, 0);
+  color: rgb(217, 0, 0);
   font-weight: 800;
 }
 
