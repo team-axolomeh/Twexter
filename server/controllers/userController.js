@@ -1,22 +1,19 @@
 const db = require('../models/twexterModel.js');
+const { makeMWareBanner } = require('../utils.js');
 const userController = {};
 
+const mwareBanner = makeMWareBanner('userController');
+
 userController.getUsernameFromCookie = (req, res, next) => {
+  mwareBanner('getUsernameFromCookie');
+
   if (!res.locals.username) res.locals.username = req.cookies['twexter'];
   return next();
 };
 
 userController.findOrCreateUser = async (req, res, next) => {
-  console.log(
-    '~~~~~~~~~~~~~~~~Entering userController.createUser middleware~~~~~~~~~~~~~~~~~~'
-  );
+  mwareBanner('findOrCreateUser');
 
-  //username retrieved from github in req.body.username
-  // make query to see if username exists in database
-  // if it doesn't, insert user into the table
-  // next()
-  // else save usernmae to res.locals
-  // next() (next middleware would prob be findTwexta based on username)
   try {
     const queryFind = `SELECT users.* FROM users WHERE users.username = $1;`;
     const queryCreate = `INSERT INTO users (username) VALUES ($1);`;
@@ -41,6 +38,8 @@ userController.findOrCreateUser = async (req, res, next) => {
 };
 
 userController.findUser = async (req, res, next) => {
+  mwareBanner('findUser');
+
   try {
     const queryFind = `SELECT * FROM users WHERE username=$1;`;
     const result = await db.query(queryFind, [req.body.username]);

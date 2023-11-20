@@ -1,8 +1,11 @@
 const dotenv = require('dotenv');
+const { makeMWareBanner } = require('../utils.js');
 const authController = {};
 
+const mwareBanner = makeMWareBanner('authController');
+
 authController.getGithubToken = async ({ query: { code } }, res, next) => {
-  console.log('~~~~~~~~Entering authController.getGithubToken~~~~~~~~');
+  mwareBanner('getGithubToken');
   // console.log(code);
 
   try {
@@ -33,7 +36,7 @@ authController.getGithubToken = async ({ query: { code } }, res, next) => {
   }
 };
 authController.getGithubUsername = async (req, res, next) => {
-  console.log('~~~~~~~~Entering authController.getGithubUsername~~~~~~~~');
+  mwareBanner('getGithubUsername');
 
   const { token } = res.locals;
 

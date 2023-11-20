@@ -10,10 +10,9 @@ import {
   useNavigate,
   useSearchParams,
 } from 'react-router-dom';
-import Logo from './logo.png';
-
 import Footer from './Footer.jsx';
 
+import Logo from './images/logo.png';
 function App() {
   const [text, setText] = useState();
   const [user, setUser] = useState();
@@ -36,7 +35,6 @@ function App() {
           <img src={Logo} />
         </div>
         <h1 className="font-semibold text-4xl">Welcome to Twexter!</h1>
-
         <div id="logo">
           <img src={Logo} />
         </div>
