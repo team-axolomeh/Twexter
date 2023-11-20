@@ -1,6 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
+const devMode = process.env.NODE_ENV === 'production';
+const styleLoader = devMode ? MiniCssExtractPlugin.loader : 'style-loader';
 
 module.exports = {
   // JS that gets run in index.html
@@ -34,7 +37,7 @@ module.exports = {
   },
   // Everything seems to work when this is commented out. Do I really need this?
   resolve: {
-    extensions: ['.js', '.jsx', '.json', '.css'],
+    extensions: ['.js', '.jsx', '.json', '.css', '...'],
   },
   module: {
     rules: [
@@ -55,7 +58,7 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: [styleLoader, 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -75,6 +78,9 @@ module.exports = {
       filename: './index.html',
     }),
 
+    new MiniCssExtractPlugin({
+      filename: 'main.css',
+    }),
     new CopyPlugin({
       patterns: [{ from: path.join(__dirname, './client/images') }],
     }),

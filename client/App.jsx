@@ -10,6 +10,8 @@ import {
   useNavigate,
   useSearchParams,
 } from 'react-router-dom';
+import Footer from './Footer.jsx';
+
 import Logo from './images/logo.png';
 function App() {
   const [text, setText] = useState();
@@ -32,8 +34,7 @@ function App() {
         <div id="logo">
           <img src={Logo} />
         </div>
-        <h1>Welcome to Twexter!</h1>
-
+        <h1 className="font-semibold text-4xl">Welcome to Twexter!</h1>
         <div id="logo">
           <img src={Logo} />
         </div>
@@ -44,10 +45,11 @@ function App() {
         <Route path="/feed" element={<Feed />} />
         <Route path="/error" element={<ErrorPage />} />
       </Routes>
-      <footer>
+      <Footer className=""></Footer>
+      {/* <footer>
         Created by{' '}
         <a href="https://github.com/axolomehsterz">the axolomehsterz</a> 💪
-      </footer>
+      </footer> */}
       {/* <Link to="/error">Click me</Link> */}
     </div>
   );

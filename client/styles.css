@@ -1,4 +1,16 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@layer base {
+  @font-face {
+    font-family: Roboto;
+    font-weight: 400;
+    src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+  }
+}
 
 body {
   --main-color: rgb(255, 161, 45);
@@ -52,11 +64,11 @@ h3 {
 #feed {
   width: 60%;
   margin: 0 auto;
-  border: solid 0.5px rgba(255, 161, 45, 0.4);
-  box-shadow: 0px 5px 5px 1px rgba(255, 166, 0, 0.8);
+  /* border: solid 0.5px rgba(255, 161, 45, 0.4); */
+  /* box-shadow: 0px 5px 5px 1px rgba(255, 166, 0, 0.8); */
 }
 
-#twext {
+.twext {
   padding-top: 3rem;
   padding-bottom: 1rem;
   padding-left: 3rem;
